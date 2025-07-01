@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default function Navbar() {
     return(
-        <nav className="flex items-center justify-between px-6 py-4 bg-red-400">
+        <nav className="flex items-center justify-between px-4 py-0 bg-red-400">
+            {/* Logo e nome */}
             <div className="flex items-center">
                 <img
                     src = "/arjlogo.svg"
@@ -13,9 +14,12 @@ export default function Navbar() {
                 />
                 <span className="text-2xl font-bold">ARJ Study</span>
             </div>
-            <div className="flex space-x-10">
-                <Link href="/" className="text-gray-700 hover:text-gray-950">História</Link>
-                <Link href="/" className="text-gray-700 hover:text-gray-950">Símbolos</Link>
+
+
+            {/* Rotas */}
+            <div className="flex space-x-0">
+                <Link href="/" className="block px-8 py-6 bg-red-400 hover:bg-red-500 transition">História</Link>
+                <Link href="/" className="block px-8 py-6 bg-red-400 hover:bg-red-500 transition">Símbolos</Link>
             </div>
         </nav>
     );
