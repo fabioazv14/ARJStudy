@@ -1,12 +1,17 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
 
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-center text-4xl font-bold mt-6">ARJ Study</h1>
-      <p></p>
+    <div className="flex items-center w-max mx-auto p-6">
+      <img
+        src="/arjlogo.svg"
+        alt="ARJLOGO"
+        width={120}
+        height={120}
+        className=""
+      />
+      <h1 className="text-4xl font-bold mt-6">ARJ Study</h1>
     </div>
   );
 }
