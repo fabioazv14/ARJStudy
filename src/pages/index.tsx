@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <div className="flex items-center w-max mx-auto p-6">
         <img
-          src="/arjlogo.svg"
+          src="/images/arjlogo.svg"
           alt="ARJLOGO"
           width={120}
           height={120}
