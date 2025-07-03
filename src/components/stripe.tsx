@@ -9,7 +9,7 @@ type StripeProps = {
   
 export default function GradeStripe({ imageSrc, imageAlt, title, description }: StripeProps) {
     return (
-        <div className="flex items-center bg-gray-100 rounded-xl px-6 py-4 shadow-md mb-6 mx-auto max-w-4xl w-full hover:scale-105 transition-all duration-300 ease-in-out">
+        <div className="flex items-center rounded-xl px-6 py-4 shadow-lg mb-6 mx-auto max-w-4xl w-full hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out bg-gradient-to-b from-gray-100 to-gray-300">
             {/* Imagem */}
             <div className="flex-shrink-0 ml-16">
                 <img

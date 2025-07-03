@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Bebas_Neue } from "next/font/google";
+import { bebasNeue } from "../../public/fonts/fonts";
 
 interface CardProps {
     imageSrc: string;
@@ -11,9 +13,9 @@ interface CardProps {
 
 export default function Card({ imageSrc, imageAlt, title, linkHref, linkText }: CardProps) {
   return (
-    <div className="max-w-sm w-70 rounded-4xl overflow-hidden shadow-lg bg-gradient-to-b from-red-400 to-orange-300 flex flex-col">
-        <div className="px-6 py-4 flex-grow mx-auto">
-            <h2 className="font-bold text-3xl text-[var(--white)] mb-2">{title}</h2>
+    <div className="max-w-sm w-70 rounded-4xl overflow-hidden shadow-xl bg-gradient-to-b from-red-400 to-orange-300 flex flex-col">
+        <div className={`${bebasNeue.variable} px-6 py-4 flex-grow mx-auto`}>
+            <h2 className="font-bold text-4xl text-[var(--white)] mb-2 font-title">{title}</h2>
         </div>
         <img 
             className="w-full h-70 object-cover mb-5 p-4" 
