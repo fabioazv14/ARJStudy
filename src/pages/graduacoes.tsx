@@ -25,6 +25,27 @@ export default function graduacoes() {
                 description="Cinto Laranja"
                 color="orange"
             />
+            <Stripe
+                imageSrc="/images/belts/greenbelt.png"
+                imageAlt="Cinto Verde"
+                title="6º KYU"
+                description="Cinto Verde"
+                color="green"
+            />
+            <Stripe
+                imageSrc="/images/belts/bluebelt.png"
+                imageAlt="Cinto Azul"
+                title="5º KYU"
+                description="Cinto Azul"
+                color="blue"
+            />
+            <Stripe
+                imageSrc="/images/belts/purplebelt.png"
+                imageAlt="Cinto Roxo"
+                title="4º KYU"
+                description="Cinto Roxo"
+                color="purple"
+            />
         </div>
     );
 }
