@@ -9,18 +9,21 @@ export default function graduacoes() {
                 imageAlt="Cinto Branco"
                 title="9º KYU"
                 description="Cinto Branco"
+                color="gray"
             />
             <Stripe
                 imageSrc="/images/belts/yellowbelt.png"
                 imageAlt="Cinto Amarelo"
                 title="8º KYU"
                 description="Cinto Amarelo"
+                color="yellow"
             />
             <Stripe
                 imageSrc="/images/belts/orangebelt.png"
                 imageAlt="Cinto Laranja"
                 title="7º KYU"
                 description="Cinto Laranja"
+                color="orange"
             />
         </div>
     );

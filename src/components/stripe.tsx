@@ -5,11 +5,12 @@ type StripeProps = {
     imageAlt: string;
     title: string;
     description: string;
+    color: string;
   };
   
-export default function GradeStripe({ imageSrc, imageAlt, title, description }: StripeProps) {
+export default function GradeStripe({ imageSrc, imageAlt, title, description, color }: StripeProps) {
     return (
-        <div className="flex items-center rounded-xl px-6 py-4 shadow-lg mb-6 mx-auto max-w-4xl w-full hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out bg-gradient-to-b from-gray-100 to-gray-300">
+        <div className={`flex items-center rounded-xl px-6 py-4 shadow-lg mb-6 mx-auto max-w-4xl w-full hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out bg-gradient-to-b from-${color}-300 to-gray-100`}>
             {/* Imagem */}
             <div className="flex-shrink-0 ml-16">
                 <img
