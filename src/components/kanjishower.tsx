@@ -16,7 +16,7 @@ type Character = {
 const characters: Character[] = [
   {
     id: 'rei',
-    src: '/images/kanji/car1yellow.png',
+    src: '/images/kanji/car1yellowred.png',
     alt: 'Kanji Rei',
     meaning: 'Cortesia, Delicadeza, Dedicação Cívica',
     top: 59,
@@ -26,7 +26,7 @@ const characters: Character[] = [
   },
   {
     id: 'choku',
-    src: '/images/kanji/car2yellow.png',
+    src: '/images/kanji/car2yellowred.png',
     alt: 'Kanji Choku',
     meaning: 'Força, Vigor, Resistência, Robustez',
     top: 76,
@@ -36,7 +36,7 @@ const characters: Character[] = [
   },
   {
     id: 'sei',
-    src: '/images/kanji/car3yellow.png',
+    src: '/images/kanji/car3yellowred.png',
     alt: 'Kanji Sei',
     meaning: 'Serenidade, Domínio da Emotividade, Segurança Tranquila',
     top: 78,
@@ -46,7 +46,7 @@ const characters: Character[] = [
   },
   {
     id: 'ki',
-    src: '/images/kanji/car4yellow.png',
+    src: '/images/kanji/car4yellowred.png',
     alt: 'Kanji Ki',
     meaning: 'Velocidade, o Instantâneo, o Súbito',
     top: 61,
@@ -66,7 +66,7 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
   const baseSize = 400 * scale;
 
   // Posição fixa para o caractere ativo ir (à direita do símbolo)
-  const hoverRightPosX = baseSize + 200;
+  const hoverRightPosX = baseSize + 500;
   const hoverRightPosY = baseSize / 2; // vertical center
 
   // Busca o caractere ativo
@@ -117,7 +117,7 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
                 height: '100%',
                 transformOrigin: 'center',
                 transform: isHovered
-                  ? `translate(${hoverRightPosX - leftPx}px, ${hoverRightPosY - topPx - sizePx / 2}px) scale(${(baseSize * 0.9) / sizePx}) rotate(0deg)`
+                  ? `translate(${hoverRightPosX - leftPx}px, ${hoverRightPosY - topPx - sizePx / 2}px) scale(${(baseSize * 1.1) / sizePx}) rotate(0deg)`
                   : `rotate(${char.rotation}deg)`,
               }}
             />
@@ -125,10 +125,56 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
         );
       })}
 
+      {!hovered && (
+        <div
+          className="relative px-30 py-40 rounded-xl"
+          style={{
+            top: hoverRightPosY,
+            left: hoverRightPosX,
+            position: 'absolute',
+            width: 600,
+            maxWidth: 500,
+            transform: 'translate(-50%, -50%)',
+            zIndex: 20,
+            color: '#1e40af', // azul escuro tailwind
+            fontWeight: 'bold',
+            fontSize: '1.125rem', // text-lg
+            fontStyle: 'italic',
+            textAlign: 'center',
+            backgroundColor: 'white',
+            userSelect: 'none',
+            opacity: 0.2,
+            transition: 'opacity 0.5s ease-in-out',
+          }}
+        >
+          {/* Linhas azuis só nos cantos */}
+          {/* Canto superior esquerdo */}
+          <div className="absolute top-0 left-0 w-8 h-1 bg-blue-500" />
+          <div className="absolute top-0 left-0 w-1 h-8 bg-blue-500" />
+
+          {/* Canto superior direito */}
+          <div className="absolute top-0 right-0 w-8 h-1 bg-blue-500" />
+          <div className="absolute top-0 right-0 w-1 h-8 bg-blue-500" />
+
+          {/* Canto inferior esquerdo */}
+          <div className="absolute bottom-0 left-0 w-8 h-1 bg-blue-500" />
+          <div className="absolute bottom-0 left-0 w-1 h-8 bg-blue-500" />
+
+          {/* Canto inferior direito */}
+          <div className="absolute bottom-0 right-0 w-8 h-1 bg-blue-500" />
+          <div className="absolute bottom-0 right-0 w-1 h-8 bg-blue-500" />
+
+          {/* Texto */}
+          Coloque o rato num carácter oriental para verificar o seu significado.
+        </div>
+      )}
+
+
+
       {/* Descrição do caractere ativo, fora do container original */}
       {activeChar && (
         <div
-          className="absolute bg-gradient-to-b  from-red-100 to-red-300 text-gray-900 text-xl font-semibold rounded-lg shadow-lg p-4 w-72 max-w-xs text-center select-text"
+          className="absolute bg-gray-200 text-gray-900 text-2xl font-semibold rounded-2xl shadow-lg p-8 w-120 max-w-2xl text-center select-text"
           style={{
             top: hoverRightPosY + (baseSize * 0.9) / (activeChar.size * scale) * activeChar.size * scale * 0.6, // embaixo da imagem ampliada
             left: hoverRightPosX + 30,

@@ -9,7 +9,7 @@ export default function graduacoes() {
                 imageAlt="Cinto Branco"
                 title="9º KYU"
                 description="Cinto Branco"
-                color="gray"
+                color="white"
             />
             <Stripe
                 imageSrc="/images/belts/yellowbelt.png"
