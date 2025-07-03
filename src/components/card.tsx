@@ -11,12 +11,12 @@ interface CardProps {
 
 export default function Card({ imageSrc, imageAlt, title, linkHref, linkText }: CardProps) {
   return (
-    <div className="max-w-sm rounded-4xl overflow-hidden shadow-lg bg-gradient-to-b from-red-400 to-orange-300 flex flex-col">
+    <div className="max-w-sm w-70 rounded-4xl overflow-hidden shadow-lg bg-gradient-to-b from-red-400 to-orange-300 flex flex-col">
         <div className="px-6 py-4 flex-grow mx-auto">
             <h2 className="font-bold text-3xl text-[var(--white)] mb-2">{title}</h2>
         </div>
         <img 
-            className="w-full h-70 object-cover mb-5" 
+            className="w-full h-70 object-cover mb-5 p-4" 
             src={imageSrc} 
             alt={imageAlt}
         />

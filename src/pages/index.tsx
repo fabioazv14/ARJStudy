@@ -12,7 +12,21 @@ export default function Home() {
         imageAlt = "ARJLOGO"
       />
 
-      <div className="flex justify-center space-x-6 px-6 py-10">
+      <div className="flex justify-center space-x-18 px-6 py-10">
+        <Card
+          imageSrc = "/images/mestrealexcarv.png"
+          imageAlt = "MESTREALEX"
+          title = "História"
+          linkHref = "/historia"
+          linkText = "Ver história"
+        />
+        <Card
+          imageSrc = "/images/arjcolor.png"
+          imageAlt = "ARJLOGO"
+          title = "Símbolos"
+          linkHref = "/simbolos"
+          linkText = "Ver símbolos"
+        />
         <Card
           imageSrc = "/images/belts.webp"
           imageAlt = "BELTS"
