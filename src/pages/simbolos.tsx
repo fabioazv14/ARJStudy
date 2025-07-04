@@ -15,8 +15,8 @@ export default function simbolos() {
                 </div>
                 <div className="">
                     <Hero
-                        title="YingYan"
-                        description="O ying é e o yan tbm é"
+                        title="YinYang"
+                        description="Texto descritivo de YinYang"
                         imageSrc="/images/yinyang.png"
                         imageAlt="YinYang"
                         bgcolor="red-100"
