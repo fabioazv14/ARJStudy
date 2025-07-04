@@ -5,17 +5,20 @@ interface HeroProps {
     description: string;
     imageSrc: string;
     imageAlt: string;
+    bgcolor: string;
+    textcolor: string;
+    textsize: string;
 }
 
 
-export default function Hero({title, description, imageSrc, imageAlt}: HeroProps) {
+export default function Hero({title, description, imageSrc, imageAlt, bgcolor, textcolor, textsize}: HeroProps) {
     return (
-        <section className="bg-red-400 w-screen">
+        <section className={`bg-${bgcolor} w-screen`}>
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-20">
             {/* Texto à esquerda */}
                 <div className={`${bebasNeue.variable} w-full md:w-1/2 md:pr-10 mb-10 md:mb-0`}>
-                    <h1 className="font-title text-8xl text-[var(--white)] font-bold mb-4">{title}</h1>
-                    <p className="text-2xl text-[var(--white)] font-bold">{description}</p>
+                    <h1 className={`font-title text-${textsize} text-[var(--${textcolor})] font-bold mb-4`}>{title}</h1>
+                    <p className={`text-2xl text-[var(--${textcolor})] font-bold`}>{description}</p>
                 </div>
 
             {/* Imagem à direita */}

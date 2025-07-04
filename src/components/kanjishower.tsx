@@ -54,6 +54,16 @@ const characters: Character[] = [
     size: 56,
     rotation: -60,
   },
+  {
+    id: 'dragon',
+    src: '/images/arj/dragon.png',
+    alt: 'dragon',
+    meaning: 'DRAGÂO - animal fabuloso com cauda de serpente, garras e asas. Símbolo de força prodigiosa, coragem, êxitos na luta (combate) e nas situações extremamente difíceis e perigosas. Representa o guardião de todos os bens e portador de prosperidade, progresso e eficácia.',
+    top: 16,
+    left: 23,
+    size: 262,
+    rotation: -6
+  },
 ];
 
 type KanjiShowerProps = {
@@ -64,12 +74,9 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
   const [hovered, setHovered] = useState<string | null>(null);
 
   const baseSize = 400 * scale;
-
-  // Posição fixa para o caractere ativo ir (à direita do símbolo)
   const hoverRightPosX = baseSize + 500;
-  const hoverRightPosY = baseSize / 2; // vertical center
+  const hoverRightPosY = baseSize / 2;
 
-  // Busca o caractere ativo
   const activeChar = hovered ? characters.find((c) => c.id === hovered) : null;
 
   return (
@@ -79,19 +86,28 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
     >
       {/* Símbolo base */}
       <img
-        src="/images/arjcolornocar.png"
+        src="/images/arj/arjcolornocarnodragon.png"
         alt="Símbolo ARJ"
         className="object-contain select-none"
         style={{ width: baseSize, height: baseSize }}
         draggable={false}
       />
 
+      {/* Caracteres interativos */}
       {characters.map((char) => {
         const topPx = (char.top / 100) * baseSize;
         const leftPx = (char.left / 100) * baseSize;
         const sizePx = char.size * scale;
+        // Corrige posição do dragão ao fazer hover
+        const adjustedLeftPx = char.id === 'dragon' ? leftPx + sizePx * 0.3 : leftPx;
+        const adjustedTopPx = char.id === 'dragon' ? topPx + sizePx * 0.05 : topPx;
+
 
         const isHovered = hovered === char.id;
+
+        // 🔽 Aplica escala menor só no DRAGÃO (para reduzir a área de hover)
+        const hitboxScale = char.id === 'dragon' ? 0.8 : 1;
+        const hitboxSizePx = sizePx * hitboxScale;
 
         return (
           <div
@@ -102,8 +118,8 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
             style={{
               top: topPx,
               left: leftPx,
-              width: sizePx,
-              height: sizePx,
+              width: hitboxSizePx,
+              height: hitboxSizePx,
               zIndex: isHovered ? 30 : 10,
             }}
           >
@@ -111,20 +127,25 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
               src={char.src}
               alt={char.alt}
               draggable={false}
-              className="object-contain drop-shadow-md transition-all duration-300"
+              className="object-contain drop-shadow-md transition-all duration-300 pointer-events-none"
               style={{
-                width: '100%',
-                height: '100%',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: sizePx,
+                height: sizePx,
                 transformOrigin: 'center',
                 transform: isHovered
-                  ? `translate(${hoverRightPosX - leftPx}px, ${hoverRightPosY - topPx - sizePx / 2}px) scale(${(baseSize * 1.1) / sizePx}) rotate(0deg)`
+                  ? `translate(${hoverRightPosX - adjustedLeftPx}px, ${hoverRightPosY - adjustedTopPx - sizePx / 2}px) scale(${(baseSize * 1.1) / sizePx}) rotate(0deg)`
                   : `rotate(${char.rotation}deg)`,
+
               }}
             />
           </div>
         );
       })}
 
+      {/* Caixa de dica quando nada está em hover */}
       {!hovered && (
         <div
           className="relative px-30 py-40 rounded-xl"
@@ -136,9 +157,9 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
             maxWidth: 500,
             transform: 'translate(-50%, -50%)',
             zIndex: 20,
-            color: '#1e40af', // azul escuro tailwind
+            color: '#1e40af',
             fontWeight: 'bold',
-            fontSize: '1.125rem', // text-lg
+            fontSize: '1.125rem',
             fontStyle: 'italic',
             textAlign: 'center',
             backgroundColor: 'white',
@@ -148,35 +169,25 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
           }}
         >
           {/* Linhas azuis só nos cantos */}
-          {/* Canto superior esquerdo */}
           <div className="absolute top-0 left-0 w-8 h-1 bg-blue-500" />
           <div className="absolute top-0 left-0 w-1 h-8 bg-blue-500" />
-
-          {/* Canto superior direito */}
           <div className="absolute top-0 right-0 w-8 h-1 bg-blue-500" />
           <div className="absolute top-0 right-0 w-1 h-8 bg-blue-500" />
-
-          {/* Canto inferior esquerdo */}
           <div className="absolute bottom-0 left-0 w-8 h-1 bg-blue-500" />
           <div className="absolute bottom-0 left-0 w-1 h-8 bg-blue-500" />
-
-          {/* Canto inferior direito */}
           <div className="absolute bottom-0 right-0 w-8 h-1 bg-blue-500" />
           <div className="absolute bottom-0 right-0 w-1 h-8 bg-blue-500" />
 
-          {/* Texto */}
           Coloque o rato num carácter oriental para verificar o seu significado.
         </div>
       )}
 
-
-
-      {/* Descrição do caractere ativo, fora do container original */}
+      {/* Texto explicativo do caractere ativo */}
       {activeChar && (
         <div
-          className="absolute bg-gray-200 text-gray-900 text-2xl font-semibold rounded-2xl shadow-lg p-8 w-120 max-w-2xl text-center select-text"
+          className="absolute bg-gray-200 text-gray-900 text-2xl font-semibold rounded-2xl shadow-lg p-8 w-300 max-w-4xl text-center select-text"
           style={{
-            top: hoverRightPosY + (baseSize * 0.9) / (activeChar.size * scale) * activeChar.size * scale * 0.6, // embaixo da imagem ampliada
+            top: hoverRightPosY + (baseSize * 0.9) / (activeChar.size * scale) * activeChar.size * scale * 0.6,
             left: hoverRightPosX + 30,
             transform: 'translateX(-50%)',
             zIndex: 40,

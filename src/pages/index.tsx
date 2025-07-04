@@ -8,8 +8,11 @@ export default function Home() {
       <Hero
         title = "ARJ Study"
         description = "Aprende a arte Alex Ryu Jitsu, a sua historia, os seus simbolos, as graduações e muito mais..."
-        imageSrc = "/images/arjlogowhite.svg"
+        imageSrc = "/images/arj/arjlogowhite.svg"
         imageAlt = "ARJLOGO"
+        bgcolor="red-400"
+        textcolor="white"
+        textsize="8xl"
       />
 
       <div className="flex justify-center space-x-18 px-6 py-10">
@@ -21,7 +24,7 @@ export default function Home() {
           linkText = "Ver história"
         />
         <Card
-          imageSrc = "/images/arjcolor.png"
+          imageSrc = "/images/arj/arjcolor.png"
           imageAlt = "ARJLOGO"
           title = "Símbolos"
           linkHref = "/simbolos"

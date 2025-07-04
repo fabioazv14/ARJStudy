@@ -7,7 +7,7 @@ export default function Navbar() {
             {/* Logo e nome */}
             <div className={`${bebasNeue.variable} flex items-center`}>
                 <img
-                    src = "/images/arjlogoblack.svg"
+                    src = "/images/arj/arjlogoblack.svg"
                     alt = "ARJLOGO"
                     width = {40}
                     height = {40}
