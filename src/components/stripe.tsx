@@ -10,12 +10,13 @@ type StripeProps = {
 
 const gradientClasses: Record<string, string> = {
     white: 'from-gray-300 to-gray-100',
-    yellow: 'from-yellow-300 to-gray-100',
-    orange: 'from-orange-300 to-gray-100',
-    green: 'from-green-300 to-gray-100',
-    blue: 'from-blue-300 to-gray-100',
-    purple: 'from-purple-400 to-gray-100',
-    brown: 'from-amber-600 to-gray-100',
+    yellow: 'from-yellow-200 to-gray-100',
+    orange: 'from-orange-200 to-gray-100',
+    green: 'from-green-200 to-gray-100',
+    blue: 'from-blue-200 to-gray-100',
+    purple: 'from-purple-200 to-gray-100',
+    red: 'from-red-200 to-gray-100',
+    brown: 'from-yellow-700 to-gray-100',
     black: 'from-zinc-800 to-gray-100',
 };
 
@@ -38,7 +39,7 @@ export default function GradeStripe({ imageSrc, imageAlt, title, description, co
             </div>
   
             {/* Texto */}
-            <div className={`${bebasNeue.variable} flex flex-col mx-auto`}>
+            <div className={`${bebasNeue.variable} flex flex-col ml-70`}>
                 <h3 className="text-4xl font-semibold text-gray-800 font-title">{title}</h3>
                 <p className="text-lg text-gray-600 mt-1">{description}</p>
             </div>

@@ -46,6 +46,27 @@ export default function graduacoes() {
                 description="Cinto Roxo"
                 color="purple"
             />
+            <Stripe
+                imageSrc="/images/belts/redbelt.png"
+                imageAlt="Cinto Vermelho"
+                title="3º KYU"
+                description="Cinto Vermelho"
+                color="red"
+            />
+            <Stripe
+                imageSrc="/images/belts/brown1belt.png"
+                imageAlt="Cinto Castanho 1"
+                title="2º KYU"
+                description="Cinto Castanho (1 lista dourada)"
+                color="brown"
+            />
+            <Stripe
+                imageSrc="/images/belts/brown2belt.png"
+                imageAlt="Cinto Castanho 2"
+                title="1º KYU"
+                description="Cinto Castanho (2 listas douradas)"
+                color="brown"
+            />
         </div>
     );
 }
