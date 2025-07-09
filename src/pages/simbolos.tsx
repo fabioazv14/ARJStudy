@@ -1,6 +1,7 @@
 import KanjiShower from "@/components/kanjishower";
 import { bebasNeue } from "../../public/fonts/fonts";
 import YinyangTable from "@/components/yinyang";
+import ColorPalette from "@/components/colorpalette";
 
 
 export default function simbolos() {
@@ -14,6 +15,9 @@ export default function simbolos() {
                 </div>
                 <div className="">
                     <YinyangTable/>
+                </div>
+                <div>
+                    <ColorPalette/>
                 </div>
             </div>
         </>
