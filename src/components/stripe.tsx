@@ -16,7 +16,7 @@ const gradientClasses: Record<string, string> = {
     blue: 'from-blue-200 to-gray-100',
     purple: 'from-purple-200 to-gray-100',
     red: 'from-red-200 to-gray-100',
-    brown: 'from-yellow-700 to-gray-100',
+    brown: 'from-[var(--lightbrown)] to-gray-100',
     black: 'from-zinc-800 to-gray-100',
 };
 
