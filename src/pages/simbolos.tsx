@@ -1,7 +1,5 @@
-import Symbol from "@/components/symbol";
 import KanjiShower from "@/components/kanjishower";
 import { bebasNeue } from "../../public/fonts/fonts";
-import Hero from "@/components/hero";
 import YinyangTable from "@/components/yinyang";
 
 
