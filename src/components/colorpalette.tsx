@@ -51,28 +51,31 @@ export default function ColorPalette() {
 
   return (
     <div className="flex flex-col md:flex-row items-start gap-60 p-6 w-full max-w-[1200px] mx-auto">
-      {/* Paleta de Cores */}
-      <div className="flex flex-col w-[320px] p-6 gap-4 rounded-2xl bg-gray-300 border-8 border-black">
-        <h1 className='text-xl text-center'
-            style={{
-                color: '#1e40af',
-                fontWeight: 'bold',
-                fontSize: '1.125rem',
-                fontStyle: 'italic',
-                opacity: 0.4,
-            }}
-        >
-            Selecione uma cor
-        </h1>
-        {colors.map((c) => (
-          <button
-            key={c.name}
-            onClick={() => setSelected(c)}
-            className={`w-full h-20 rounded-lg border-4 ${selected.name === c.name ? 'border-blue-500' : 'border-black'} hover:scale-105 transition`}
-            style={{ backgroundColor: c.color }}
-            title={c.name}
-          />
-        ))}
+      <div className={`${bebasNeue.variable} flex flex-col`}>
+        <h1 className='flex text-center mx-auto font-title text-6xl mb-8'>Significado das cores</h1>
+        {/* Paleta de Cores */}
+        <div className="flex flex-col w-[320px] p-6 gap-4 rounded-2xl bg-gray-300 border-8 border-black">
+          <h1 className='text-xl text-center'
+              style={{
+                  color: '#1e40af',
+                  fontWeight: 'bold',
+                  fontSize: '1.125rem',
+                  fontStyle: 'italic',
+                  opacity: 0.4,
+              }}
+          >
+              Selecione uma cor
+          </h1>
+          {colors.map((c) => (
+            <button
+              key={c.name}
+              onClick={() => setSelected(c)}
+              className={`w-full h-20 rounded-lg border-4 ${selected.name === c.name ? 'border-blue-500' : 'border-black'} hover:scale-105 transition`}
+              style={{ backgroundColor: c.color }}
+              title={c.name}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Significado da cor selecionada */}
