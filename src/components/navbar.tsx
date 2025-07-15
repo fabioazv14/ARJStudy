@@ -3,7 +3,7 @@ import { fjallaOne, bebasNeue } from "../../public/fonts/fonts";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-0 bg-red-400">
+    <nav className="fixed top-0 left-1/2 transform -translate-x-1/2 w-400 z-50 flex items-center justify-between px-4 py-0 bg-red-300 rounded-2xl mt-5">
       {/* Logo e nome */}
       <div className={`${bebasNeue.variable} flex items-center`}>
         <img
@@ -22,19 +22,19 @@ export default function Navbar() {
       <div className={`${fjallaOne.variable} flex space-x-0`}>
         <Link
           href="/historia/"
-          className="font-navbut text-2xl block px-8 py-6 bg-red-400 hover:bg-red-500 transition"
+          className="font-navbut text-2xl block px-8 py-6 bg-red-300 hover:bg-red-500 transition"
         >
           História
         </Link>
         <Link
           href="/simbolos/"
-          className="font-navbut text-2xl block px-8 py-6 bg-red-400 hover:bg-red-500 transition"
+          className="font-navbut text-2xl block px-8 py-6 bg-red-300 hover:bg-red-500 transition"
         >
           Símbolos
         </Link>
         <Link
           href="/graduacoes/"
-          className="font-navbut text-2xl block px-8 py-6 bg-red-400 hover:bg-red-500 transition"
+          className="font-navbut text-2xl block px-8 py-6 bg-red-300 hover:bg-red-500 transition"
         >
           Graduações
         </Link>

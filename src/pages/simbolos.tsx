@@ -6,7 +6,8 @@ import ColorPalette from "@/components/colorpalette";
 
 export default function simbolos() {
     return(
-        <>  <div className="flex flex-col gap-50 bg-red-100">
+        <>  
+            <div className="flex flex-col gap-50 bg-red-100 pt-20">
                 <div className={`${bebasNeue.variable} flex flex-col p-10 bg-red-100 text-center`}>
                     <h1 className="p-8 text-8xl font-title ml-3">Símbolo do Alex Ryu Jitsu</h1>
                     <KanjiShower

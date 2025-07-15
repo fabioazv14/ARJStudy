@@ -4,7 +4,7 @@ import Card from "@/components/card";
 
 export default function Home() {
   return (
-    <>
+    <div className="">
       <Hero
         title = "ARJ Study"
         description = "Aprende a arte Alex Ryu Jitsu, a sua historia, os seus simbolos, as graduações e muito mais..."
@@ -15,7 +15,7 @@ export default function Home() {
         textsize="8xl"
       />
 
-      <div className="flex justify-center space-x-18 px-6 py-10">
+      <div className="flex justify-center space-x-18 px-6 py-14">
         <Card
           imageSrc = "/images/mestrealexcarv.png"
           imageAlt = "MESTREALEX"
@@ -38,6 +38,6 @@ export default function Home() {
           linkText = "Ver graduações"
         />
       </div>
-    </>
+    </div>
   );
 }

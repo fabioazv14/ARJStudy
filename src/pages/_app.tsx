@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="">
       <Navbar/>
-      <div className="pt-20">
+      <div className="">
         <Component {...pageProps} />;
       </div>
     </div>
