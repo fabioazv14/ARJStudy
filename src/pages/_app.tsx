@@ -7,9 +7,11 @@ import Navbar from "@/components/navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div className="">
       <Navbar/>
-      <Component {...pageProps} />;
-    </>
+      <div className="pt-20">
+        <Component {...pageProps} />;
+      </div>
+    </div>
   );
 }
