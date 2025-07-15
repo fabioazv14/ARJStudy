@@ -3,7 +3,7 @@ import Stripe from "@/components/stripe";
 
 export default function graduacoes() {
     return(
-        <div className="flex flex-col mt-16">
+        <div className="flex flex-col mt-16 pt-20">
             <Stripe
                 imageSrc="/images/belts/whitebelt.png"
                 imageAlt="Cinto Branco"
