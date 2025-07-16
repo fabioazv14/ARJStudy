@@ -21,7 +21,7 @@ const characters: Character[] = [
     meaning: 'Cortesia, Delicadeza, Dedicação Cívica',
     top: 59,
     left: 7,
-    size: 64,
+    size: 48,
     rotation: 60,
   },
   {
@@ -31,7 +31,7 @@ const characters: Character[] = [
     meaning: 'Força, Vigor, Resistência, Robustez',
     top: 76,
     left: 23,
-    size: 56,
+    size: 42,
     rotation: 30,
   },
   {
@@ -41,7 +41,7 @@ const characters: Character[] = [
     meaning: 'Serenidade, Domínio da Emotividade, Segurança Tranquila',
     top: 78,
     left: 58,
-    size: 60,
+    size: 45,
     rotation: -23,
   },
   {
@@ -51,7 +51,7 @@ const characters: Character[] = [
     meaning: 'Velocidade, o Instantâneo, o Súbito',
     top: 61,
     left: 78,
-    size: 56,
+    size: 42,
     rotation: -60,
   },
   {
@@ -61,7 +61,7 @@ const characters: Character[] = [
     meaning: 'DRAGÂO - animal fabuloso com cauda de serpente, garras e asas. Símbolo de força prodigiosa, coragem, êxitos na luta (combate) e nas situações extremamente difíceis e perigosas. Representa o guardião de todos os bens e portador de prosperidade, progresso e eficácia.',
     top: 16,
     left: 23,
-    size: 262,
+    size: 196,
     rotation: -6
   },
 ];
@@ -73,7 +73,7 @@ type KanjiShowerProps = {
 export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
   const [hovered, setHovered] = useState<string | null>(null);
 
-  const baseSize = 400 * scale;
+  const baseSize = 300 * scale;
   const hoverRightPosX = baseSize + 500;
   const hoverRightPosY = baseSize / 2;
 
@@ -81,7 +81,7 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
 
   return (
     <div
-      className="relative mt-12 ml-12"
+      className="relative mt-20 ml-70"
       style={{ width: baseSize + 250, height: baseSize }}
     >
       {/* Símbolo base */}

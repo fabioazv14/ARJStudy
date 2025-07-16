@@ -24,6 +24,12 @@
   }
 }
 
+@layer components {
+  .h-padding {
+    @apply px-8
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

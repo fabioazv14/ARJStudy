@@ -9,8 +9,8 @@ export default function YinyangTable() {
         <div className="flex flex-col md:flex-row gap-4">
           {/* Yin */}
           <div className={`${bebasNeue.variable} ${fjallaOne.variable} bg-black text-white rounded-2xl shadow-lg p-4 min-w-[300px]`}>
-            <h2 className="text-7xl font-bold mb-12 text-center font-title">Yin</h2>
-            <ul className="list-disc list-inside space-y-4 text-3xl font-navbut">
+            <h2 className="text-6xl font-bold mb-12 text-center font-title">Yin</h2>
+            <ul className="list-disc list-inside space-y-4 text-2xl font-navbut">
               <li>Passivo</li>
               <li>Princípio Negativo</li>
               <li>Feminino</li>
@@ -25,14 +25,14 @@ export default function YinyangTable() {
   
           {/* Yang */}
           <div className={`${bebasNeue.variable} ${fjallaOne.variable} bg-white text-black rounded-2xl shadow-lg p-4 min-w-[300px] border`}>
-            <h2 className="text-7xl font-bold mb-12 text-center font-title">Yang</h2>
-            <ul className="list-disc list-inside space-y-4 text-3xl font-navbut">
+            <h2 className="text-6xl font-bold mb-12 text-center font-title">Yang</h2>
+            <ul className="list-disc list-inside space-y-4 text-2xl font-navbut">
               <li>Força Activa</li>
               <li>Masculino</li>
               <li>Calor</li>
               <li>Brilhante</li>
             </ul>
-            <h3 className="flex mx-auto text-center mt-18 text-3xl font-navbut w-40">Atua em tudo que é luminoso</h3>
+            <h3 className="flex mx-auto text-center mt-18 text-2xl font-navbut w-40">Atua em tudo que é luminoso</h3>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export default function YinyangTable() {
           <img
             src="/images/yinyang.png"
             alt="YINYANG"
-            width={500}
+            width={350}
           />
         </div>
       </div>
