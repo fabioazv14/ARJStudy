@@ -17,7 +17,7 @@ export default function alexryujitsu() {
                 <div className="flex justify-center mt-12 animate-bounce">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 text-gray-600"
+                        className="h-8 w-8 text-gray-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
