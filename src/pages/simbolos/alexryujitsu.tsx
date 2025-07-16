@@ -1,10 +1,10 @@
 import KanjiShower from "@/components/kanjishower";
-import { bebasNeue } from "../../public/fonts/fonts";
+import { bebasNeue } from "../../../public/fonts/fonts";
 import YinyangTable from "@/components/yinyang";
 import ColorPalette from "@/components/colorpalette";
 
 
-export default function simbolos() {
+export default function alexryujitsu() {
     return(
         <>  
             <div className="flex flex-col gap-50 bg-red-100 pt-20">

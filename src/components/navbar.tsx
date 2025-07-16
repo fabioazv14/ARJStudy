@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { fjallaOne, bebasNeue } from "../../public/fonts/fonts";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Navbar() {
 
+  const [submenuOpen, setSubmenuOpen] = useState(false);
   const router = useRouter();
+
+  const toggleSubmenu = () => setSubmenuOpen(!submenuOpen);
+
 
   return (
     <nav className="fixed top-0 left-1/2 transform -translate-x-1/2 w-400 z-50 flex items-center justify-between px-4 py-0 bg-red-300 rounded-2xl mt-5">
@@ -35,16 +40,45 @@ export default function Navbar() {
           História
         </Link>
 
-        <Link
-          href="/simbolos/"
-          className={`font-navbut text-2xl block px-8 py-6 transition ${
-            router.pathname === '/simbolos'
-                ? 'bg-red-500'
-                : 'bg-red-300 hover:bg-red-500'
-          }`}
-        >
-          Símbolos
-        </Link>
+        <div className="relative">
+          <button
+            onClick={toggleSubmenu}
+            className={`font-navbut text-2xl block px-8 py-6 transition ${
+              router.pathname.startsWith("/simbolos") ? "bg-red-500" : "bg-red-300 hover:bg-red-500"
+            }`}
+          >
+            Símbolos
+          </button>
+
+          {submenuOpen && (
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 w-56 bg-red-200 text-black border-2 border-black rounded-2xl shadow-xl z-50 text-center">
+              <Link
+                href="/simbolos/alexryujitsu"
+                className="block px-4 py-2 hover:bg-red-100"
+                onClick={() => setSubmenuOpen(false)}
+              >
+                Alex Ryu Jitsu
+              </Link>
+
+              <Link
+                  href="/simbolos/aamf"
+                  className="block px-4 py-2 hover:bg-red-100"
+                  onClick={() => setSubmenuOpen(false)}
+              >
+                Associação de Artes
+                Marciais de Famalicão
+              </Link>
+
+              <Link
+                  href="/simbolos/AHHHHH"
+                  className="block px-4 py-2 hover:bg-red-100"
+                  onClick={() => setSubmenuOpen(false)}
+              >
+                AHHHHH
+              </Link>
+            </div>
+          )}
+        </div>
 
         <Link
           href="/graduacoes/"
