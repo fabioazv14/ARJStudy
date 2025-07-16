@@ -31,6 +31,13 @@ export default function Home() {
           linkText = "Ver símbolos"
         />
         <Card
+          imageSrc = "/images/tecnica.png"
+          imageAlt = "TECNICA"
+          title = "Técnica"
+          linkHref = "/tecnica"
+          linkText = "Ver técnica"
+        />
+        <Card
           imageSrc = "/images/belts.webp"
           imageAlt = "BELTS"
           title = "Graduações"

@@ -79,6 +79,18 @@ export default function Navbar() {
             </div>
           )}
         </div>
+          
+
+        <Link
+          href="/tecnica/"
+          className={`font-navbut text-2xl block px-8 py-6 transition ${
+            router.pathname === '/tecnica'
+                ? 'bg-red-500'
+                : 'bg-red-300 hover:bg-red-500'
+          }`}
+        >
+          Técnica
+        </Link>
 
         <Link
           href="/graduacoes/"
