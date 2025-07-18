@@ -3,7 +3,7 @@ import TecnicaLine from "@/components/tecnicaline";
 
 export default function tecnica() {
     return (
-        <div className="mt-16 pt-20">
+        <div className="flex flex-col gap-2 mt-16 pt-20">
             <TecnicaLine
                 imageSrc='images/tecnica/oitsuki.png'
                 techniqueName="Oi-tsuki"
@@ -11,6 +11,10 @@ export default function tecnica() {
             <TecnicaLine
                 imageSrc='images/tecnica/gyakutsuki.png'
                 techniqueName="Gyaku-tsuki"
+            />
+            <TecnicaLine
+                imageSrc='images/tecnica/maegueri.png'
+                techniqueName="Mae-gueri"
             />
         </div>
     );
