@@ -36,7 +36,7 @@ export default function Hero({title, description, imageSrc, imageAlt, bgcolor, t
             >
                 {/* Texto à esquerda */}
                 <div className={`${bebasNeue.variable} w-full md:w-1/2 md:pr-10 mb-10 md:mb-0`}>
-                    <h1 className={`font-title text-${textsize} text-[var(--${textcolor})] font-bold mb-4`}>{title}</h1>
+                    <h1 className={`font-title text-8xl text-[var(--${textcolor})] font-bold mb-4`}>{title}</h1>
                     <p className={`text-2xl text-[var(--${textcolor})] font-bold`}>{description}</p>
                 </div>
 

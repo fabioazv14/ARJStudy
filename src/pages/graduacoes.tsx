@@ -67,6 +67,27 @@ export default function graduacoes() {
                 description="Cinto Castanho (2 listas douradas)"
                 color="brown"
             />
+            <Stripe
+                imageSrc="/images/belts/black1belt.png"
+                imageAlt="Cinto Preto 1"
+                title="1º DAN"
+                description="Cinto Preto (1 lista douradas)"
+                color="black"
+            />
+            <Stripe
+                imageSrc="/images/belts/black2belt.png"
+                imageAlt="Cinto Preto 2"
+                title="2º DAN"
+                description="Cinto Preto (2 listas douradas)"
+                color="black"
+            />
+            <Stripe
+                imageSrc="/images/belts/black3belt.png"
+                imageAlt="Cinto Preto 3"
+                title="3º DAN"
+                description="Cinto Preto (3 listas douradas)"
+                color="black"
+            />
         </div>
     );
 }
