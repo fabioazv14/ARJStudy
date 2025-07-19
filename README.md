@@ -10,6 +10,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ---
 
+## 🖼️ Preview
+
+![Landing Page](docs/landingpage.png)
+
+
+---
+
 ## 🧠 Features
 
 - 📜 History of Alex Ryu Jitsu  
