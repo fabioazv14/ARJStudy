@@ -20,7 +20,7 @@ export default function TecnicaLine({ imageSrc, techniqueName, altText }: Tecnic
       <div className=''>
         <div className={`${bebasNeue.variable} flex flex-col mr-40`}>
             <h3 className="text-5xl font-semibold text-gray-900 font-title">{techniqueName}</h3>
-            <div className="mt-1 w-16 h-1 bg-gradient-to-r from-red-400 via-orange-500 to-yellow-500 rounded"></div>
+            <div className="mt-1 w-16 h-1 bg-gradient-to-r from-red-300 via-red-200 to-white rounded"></div>
         </div>
       </div>
     </div>

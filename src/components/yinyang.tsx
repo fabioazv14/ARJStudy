@@ -40,7 +40,7 @@ export default function YinyangTable() {
         {/* Símbolo Yin-Yang */}
         <div className="flex">
           <img
-            src="/images/yinyang.png"
+            src="/images/yinyang/yinyang.png"
             alt="YINYANG"
             width={350}
           />
