@@ -33,7 +33,7 @@ export default function Yinyang({title, description, imageSrc1, imageAlt1, image
                     className="absolute z-10 w-full max-w-3xl object-contain transition-transform duration-300 ease-in-out hover:scale-125 hover:drop-shadow-2xl"
                 />
 
-                {/* Yin (imagem de cima, sem bloquear o rato) */}
+                {/* Yin (imagem de cima) */}
                 <img
                     src={imageSrc1}
                     alt={imageAlt1}
