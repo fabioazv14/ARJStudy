@@ -9,16 +9,20 @@ export default function uke() {
                 techniqueName="Age-uke"
             />
             <TecnicaLine
+                imageSrc='/images/tecnica/shutouke.png'
+                techniqueName="Shuto-uke"
+            />
+            <TecnicaLine
+                imageSrc='/images/tecnica/gedanbarai.png'
+                techniqueName="Gedan-barai"
+            />
+            <TecnicaLine
                 imageSrc='/images/tecnica/sotouke.png'
                 techniqueName="Soto-uke"
             />
             <TecnicaLine
                 imageSrc='/images/tecnica/udeuke.png'
                 techniqueName="Ude-uke"
-            />
-            <TecnicaLine
-                imageSrc='/images/tecnica/shutouke.png'
-                techniqueName="Shuto-uke"
             />
             <TecnicaLine
                 imageSrc='/images/tecnica/haishuuke.png'

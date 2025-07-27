@@ -17,12 +17,12 @@ export default function tsuki() {
                 techniqueName="Tate-tsuki"
             />
             <TecnicaLine
-                imageSrc='/images/tecnica/tubitsuki.png'
-                techniqueName="Tubi-tsuki"
+                imageSrc='/images/tecnica/teishuushi.png'
+                techniqueName="Teishu-ushi"
             />
             <TecnicaLine
-                imageSrc='/images/tecnica/???tsuki.png'
-                techniqueName="???-tsuki"
+                imageSrc='/images/tecnica/tubitsuki.png'
+                techniqueName="Tubi-tsuki"
             />
         </div>
     );

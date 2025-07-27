@@ -105,7 +105,7 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
 
         const isHovered = hovered === char.id;
 
-        // 🔽 Aplica escala menor só no DRAGÃO (para reduzir a área de hover)
+        // Aplica escala menor só no DRAGÃO (para reduzir a área de hover)
         const hitboxScale = char.id === 'dragon' ? 0.8 : 1;
         const hitboxSizePx = sizePx * hitboxScale;
 
@@ -168,7 +168,7 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
             transition: 'opacity 0.5s ease-in-out',
           }}
         >
-          {/* Linhas azuis só nos cantos */}
+          {/* Linhas azuis */}
           <div className="absolute top-0 left-0 w-8 h-1 bg-blue-500" />
           <div className="absolute top-0 left-0 w-1 h-8 bg-blue-500" />
           <div className="absolute top-0 right-0 w-8 h-1 bg-blue-500" />
