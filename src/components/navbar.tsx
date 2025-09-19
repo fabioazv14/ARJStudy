@@ -92,19 +92,19 @@ export default function Navbar() {
           </button>
 
           <div
-            className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 bg-red-200 text-black border-2 border-black rounded-2xl shadow-xl z-50 text-center origin-top transition-all duration-300 ease-in-out transform ${
+            className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 bg-red-200 text-black border-2 border-gray-400 rounded-2xl shadow-xl z-50 text-center origin-top transition-all duration-300 ease-in-out transform ${
               submenuSimbolosOpen
                 ? "scale-100 opacity-100 visible"
                 : "scale-95 opacity-0 invisible pointer-events-none"
             }`}
           >
-            <Link href="/simbolos/alexryujitsu" className="block px-4 py-2 hover:bg-red-100">
+            <Link href="/simbolos/alexryujitsu" className="block px-4 py-2 rounded-2xl hover:bg-red-100">
               Alex Ryu Jitsu
             </Link>
-            <Link href="/simbolos/aamf" className="block px-4 py-2 hover:bg-red-100">
+            <Link href="/simbolos/aamf" className="block px-4 py-2 rounded-2xl hover:bg-red-100">
               Associação de Artes Marciais de Famalicão
             </Link>
-            <Link href="/simbolos/AHHHHH" className="block px-4 py-2 hover:bg-red-100">
+            <Link href="/simbolos/AHHHHH" className="block px-4 py-2 rounded-2xl hover:bg-red-100">
               AHHHHH
             </Link>
           </div>
@@ -124,19 +124,19 @@ export default function Navbar() {
           </button>
 
           <div
-            className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 bg-red-200 text-black border-2 border-black rounded-2xl shadow-xl z-50 text-center origin-top transition-all duration-300 ease-in-out transform ${
+            className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 bg-red-200 text-black border-2 border-gray-400 rounded-2xl shadow-xl z-50 text-center origin-top transition-all duration-300 ease-in-out transform ${
               submenuTecnicaOpen
                 ? "scale-100 opacity-100 visible"
                 : "scale-95 opacity-0 invisible pointer-events-none"
             }`}
           >
-            <Link href="/tecnica/tsuki" className="block px-4 py-2 hover:bg-red-100">
+            <Link href="/tecnica/tsuki" className="block px-4 py-2 rounded-2xl hover:bg-red-100">
               Tsuki
             </Link>
-            <Link href="/tecnica/gueri" className="block px-4 py-2 hover:bg-red-100">
+            <Link href="/tecnica/gueri" className="block px-4 py-2 rounded-2xl hover:bg-red-100">
               Gueri
             </Link>
-            <Link href="/tecnica/uke" className="block px-4 py-2 hover:bg-red-100">
+            <Link href="/tecnica/uke" className="block px-4 py-2 rounded-2xl hover:bg-red-100">
               Uke
             </Link>
           </div>
