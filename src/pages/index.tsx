@@ -27,14 +27,14 @@ export default function Home() {
           imageSrc = "/images/arj/arjcolor.png"
           imageAlt = "ARJLOGO"
           title = "Símbolos"
-          linkHref = "/simbolos"
+          linkHref = "/simbolos/alexryujitsu/"
           linkText = "Ver símbolos"
         />
         <Card
           imageSrc = "/images/tecnica.png"
           imageAlt = "TECNICA"
           title = "Técnica"
-          linkHref = "/tecnica"
+          linkHref = "/tecnica/tsuki/"
           linkText = "Ver técnica"
         />
         <Card
