@@ -1,38 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --black: #171717;
-  --white: #ffffff;
+/* Dark mode (default) */
+:root,
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --black: #0a0a0a;
+  --white: #fafafa;
   --lightbrown: #b37e66;
+  --accent: #c0392b;
+  --accent-light: #e74c3c;
+  --accent-dark: #922b21;
+  --surface: #141414;
+  --surface-light: #1e1e1e;
+  --border: #2a2a2a;
+  --muted: #737373;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --logo-src: url("/images/arj/arjlogowhite.svg");
+}
+
+/* Light mode */
+.light {
+  --background: #f8f8f8;
+  --foreground: #1a1a1a;
+  --black: #0a0a0a;
+  --white: #fafafa;
+  --lightbrown: #b37e66;
+  --accent: #b5312a;
+  --accent-light: #d63031;
+  --accent-dark: #922b21;
+  --surface: #ffffff;
+  --surface-light: #f0f0f0;
+  --border: #e0e0e0;
+  --muted: #6b7280;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --logo-src: url("/images/arj/arjlogoblack.svg");
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-navbut: var(--font-fjalla-one);
   --font-title: var(--font-bebas-neue);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
+@layer components {
+  .h-padding {
+    @apply px-8;
   }
 }
 
-@layer components {
-  .h-padding {
-    @apply px-8
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Subtle page transition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: fadeIn 0.4s ease-out;
 }
 
