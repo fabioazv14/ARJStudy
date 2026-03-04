@@ -1,49 +1,59 @@
 import { bebasNeue } from "../../public/fonts/fonts";
 
 type StripeProps = {
-    imageSrc: string;
-    imageAlt: string;
-    title: string;
-    description: string;
-    color: string;
-  };
-
-const gradientClasses: Record<string, string> = {
-    white: 'from-gray-300 to-gray-100',
-    yellow: 'from-yellow-200 to-gray-100',
-    orange: 'from-orange-200 to-gray-100',
-    green: 'from-green-200 to-gray-100',
-    blue: 'from-blue-200 to-gray-100',
-    purple: 'from-purple-200 to-gray-100',
-    red: 'from-red-200 to-gray-100',
-    brown: 'from-[var(--lightbrown)] to-gray-100',
-    black: 'from-zinc-800 to-gray-100',
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+  color: string;
 };
 
-  
+const accentColors: Record<string, string> = {
+  white: "#d4d4d4",
+  yellow: "#eab308",
+  orange: "#f97316",
+  green: "#22c55e",
+  blue: "#3b82f6",
+  purple: "#a855f7",
+  red: "#ef4444",
+  brown: "#b37e66",
+  black: "#525252",
+};
 
-  
 export default function GradeStripe({ imageSrc, imageAlt, title, description, color }: StripeProps) {
+  const accent = accentColors[color] || "#d4d4d4";
 
-    const gradient = gradientClasses[color] || "from-white to-gray-100"
+  return (
+    <div
+      className="group flex items-center gap-6 rounded-xl px-6 py-5 mx-auto max-w-3xl w-full transition-all duration-300 ease-out bg-[var(--surface)] border border-[var(--border)] hover:border-transparent hover:shadow-lg hover:shadow-black/20 hover:-translate-y-0.5"
+      style={{
+        borderLeftWidth: "3px",
+        borderLeftColor: accent,
+      }}
+    >
+      {/* Belt image */}
+      <div className="flex-shrink-0">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-24 h-24 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
 
-    return (
-        <div className={`flex items-center rounded-xl px-6 py-4 shadow-lg mb-6 mx-auto max-w-4xl w-full hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out bg-gradient-to-b ${gradient}`}>
-            {/* Imagem */}
-            <div className="flex-shrink-0 ml-16">
-                <img
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className="w-40 h-40 object-contain"
-                />
-            </div>
-  
-            {/* Texto */}
-            <div className={`${bebasNeue.variable} flex flex-col ml-70`}>
-                <h3 className="text-4xl font-semibold text-gray-800 font-title">{title}</h3>
-                <p className="text-lg text-gray-600 mt-1">{description}</p>
-            </div>
-        </div>
-    );
+      {/* Text */}
+      <div className={`${bebasNeue.variable} flex flex-col`}>
+        <h3 className="text-3xl font-semibold text-[var(--foreground)] font-title tracking-wide">
+          {title}
+        </h3>
+        <p className="text-base text-[var(--muted)] mt-0.5">{description}</p>
+      </div>
+
+      {/* Subtle accent dot */}
+      <div
+        className="ml-auto w-2.5 h-2.5 rounded-full opacity-60 flex-shrink-0"
+        style={{ backgroundColor: accent }}
+      />
+    </div>
+  );
 }
   

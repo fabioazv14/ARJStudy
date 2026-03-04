@@ -1,93 +1,31 @@
 import Stripe from "@/components/stripe";
+import { bebasNeue } from "../../public/fonts/fonts";
 
-
-export default function graduacoes() {
-    return(
-        <div className="flex flex-col mt-16 pt-20">
-            <Stripe
-                imageSrc="/images/belts/whitebelt.png"
-                imageAlt="Cinto Branco"
-                title="9º KYU"
-                description="Cinto Branco"
-                color="white"
-            />
-            <Stripe
-                imageSrc="/images/belts/yellowbelt.png"
-                imageAlt="Cinto Amarelo"
-                title="8º KYU"
-                description="Cinto Amarelo"
-                color="yellow"
-            />
-            <Stripe
-                imageSrc="/images/belts/orangebelt.png"
-                imageAlt="Cinto Laranja"
-                title="7º KYU"
-                description="Cinto Laranja"
-                color="orange"
-            />
-            <Stripe
-                imageSrc="/images/belts/greenbelt.png"
-                imageAlt="Cinto Verde"
-                title="6º KYU"
-                description="Cinto Verde"
-                color="green"
-            />
-            <Stripe
-                imageSrc="/images/belts/bluebelt.png"
-                imageAlt="Cinto Azul"
-                title="5º KYU"
-                description="Cinto Azul"
-                color="blue"
-            />
-            <Stripe
-                imageSrc="/images/belts/purplebelt.png"
-                imageAlt="Cinto Roxo"
-                title="4º KYU"
-                description="Cinto Roxo"
-                color="purple"
-            />
-            <Stripe
-                imageSrc="/images/belts/redbelt.png"
-                imageAlt="Cinto Vermelho"
-                title="3º KYU"
-                description="Cinto Vermelho"
-                color="red"
-            />
-            <Stripe
-                imageSrc="/images/belts/brown1belt.png"
-                imageAlt="Cinto Castanho 1"
-                title="2º KYU"
-                description="Cinto Castanho (1 lista dourada)"
-                color="brown"
-            />
-            <Stripe
-                imageSrc="/images/belts/brown2belt.png"
-                imageAlt="Cinto Castanho 2"
-                title="1º KYU"
-                description="Cinto Castanho (2 listas douradas)"
-                color="brown"
-            />
-            <Stripe
-                imageSrc="/images/belts/black1belt.png"
-                imageAlt="Cinto Preto 1"
-                title="1º DAN"
-                description="Cinto Preto (1 lista douradas)"
-                color="black"
-            />
-            <Stripe
-                imageSrc="/images/belts/black2belt.png"
-                imageAlt="Cinto Preto 2"
-                title="2º DAN"
-                description="Cinto Preto (2 listas douradas)"
-                color="black"
-            />
-            <Stripe
-                imageSrc="/images/belts/black3belt.png"
-                imageAlt="Cinto Preto 3"
-                title="3º DAN"
-                description="Cinto Preto (3 listas douradas)"
-                color="black"
-            />
+export default function Graduacoes() {
+  return (
+    <div className="min-h-screen pt-28 pb-20 px-6">
+      <div className="max-w-3xl mx-auto mb-12">
+        <div className={`${bebasNeue.variable}`}>
+          <div className="w-8 h-0.5 bg-[var(--accent)] mb-4" />
+          <h1 className="font-title text-5xl text-[var(--foreground)] tracking-wide">Graduações</h1>
+          <p className="text-[var(--muted)] mt-2">Sistema de cintos do Alex Ryu Jitsu</p>
         </div>
-    );
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <Stripe imageSrc="/images/belts/whitebelt.png" imageAlt="Cinto Branco" title="9º KYU" description="Cinto Branco" color="white" />
+        <Stripe imageSrc="/images/belts/yellowbelt.png" imageAlt="Cinto Amarelo" title="8º KYU" description="Cinto Amarelo" color="yellow" />
+        <Stripe imageSrc="/images/belts/orangebelt.png" imageAlt="Cinto Laranja" title="7º KYU" description="Cinto Laranja" color="orange" />
+        <Stripe imageSrc="/images/belts/greenbelt.png" imageAlt="Cinto Verde" title="6º KYU" description="Cinto Verde" color="green" />
+        <Stripe imageSrc="/images/belts/bluebelt.png" imageAlt="Cinto Azul" title="5º KYU" description="Cinto Azul" color="blue" />
+        <Stripe imageSrc="/images/belts/purplebelt.png" imageAlt="Cinto Roxo" title="4º KYU" description="Cinto Roxo" color="purple" />
+        <Stripe imageSrc="/images/belts/redbelt.png" imageAlt="Cinto Vermelho" title="3º KYU" description="Cinto Vermelho" color="red" />
+        <Stripe imageSrc="/images/belts/brown1belt.png" imageAlt="Cinto Castanho 1" title="2º KYU" description="Cinto Castanho (1 lista dourada)" color="brown" />
+        <Stripe imageSrc="/images/belts/brown2belt.png" imageAlt="Cinto Castanho 2" title="1º KYU" description="Cinto Castanho (2 listas douradas)" color="brown" />
+        <Stripe imageSrc="/images/belts/black1belt.png" imageAlt="Cinto Preto 1" title="1º DAN" description="Cinto Preto (1 lista dourada)" color="black" />
+        <Stripe imageSrc="/images/belts/black2belt.png" imageAlt="Cinto Preto 2" title="2º DAN" description="Cinto Preto (2 listas douradas)" color="black" />
+        <Stripe imageSrc="/images/belts/black3belt.png" imageAlt="Cinto Preto 3" title="3º DAN" description="Cinto Preto (3 listas douradas)" color="black" />
+      </div>
+    </div>
+  );
 }
