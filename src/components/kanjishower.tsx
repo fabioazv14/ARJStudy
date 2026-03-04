@@ -81,7 +81,7 @@ export default function KanjiShower({ scale = 1 }: KanjiShowerProps) {
   const activeChar = hovered ? characters.find((c) => c.id === hovered) : null;
 
   return (
-    <div className="relative mx-auto" style={{ width: baseSize + 250, height: baseSize }}>
+    <div className="relative ml-102" style={{ width: baseSize + 600, height: baseSize }}>
       {/* Base symbol */}
       <img
         src="/images/arj/arjcolornocarnodragon.png"
