@@ -182,19 +182,70 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          mobileOpen ? "max-h-[26rem] opacity-100" : "max-h-0 opacity-0"
         } bg-[var(--surface)] border-t border-[var(--border)]`}
       >
         <div className={`${fjallaOne.variable} flex flex-col px-6 py-4 gap-2`}>
           <Link href="/historia/" className={linkClass("/historia")}>
             História
           </Link>
-          <Link href="/simbolos/alexryujitsu" className={linkClass("/simbolos", false)}>
-            Símbolos
-          </Link>
-          <Link href="/tecnica/tsuki" className={linkClass("/tecnica", false)}>
-            Técnica
-          </Link>
+          {/* Mobile: Símbolos dropdown */}
+          <div className="flex flex-col">
+            <button
+              onClick={toggleSimbolos}
+              className={`${linkClass("/simbolos", false)} flex items-center justify-between w-full`}
+              aria-expanded={submenuSimbolosOpen}
+            >
+              <span>Símbolos</span>
+              <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${submenuSimbolosOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div
+              className={`pl-3 mt-1 space-y-1 transition-all duration-200 overflow-hidden ${
+                submenuSimbolosOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <Link href="/simbolos/alexryujitsu" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
+                Alex Ryu Jitsu
+              </Link>
+              <Link href="/simbolos/aamf" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
+                Associação de Artes Marciais de Famalicão
+              </Link>
+              <Link href="/simbolos/AHHHHH" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
+                AHHHHH
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile: Técnica dropdown */}
+          <div className="flex flex-col">
+            <button
+              onClick={toggleTecnica}
+              className={`${linkClass("/tecnica", false)} flex items-center justify-between w-full`}
+              aria-expanded={submenuTecnicaOpen}
+            >
+              <span>Técnica</span>
+              <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${submenuTecnicaOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div
+              className={`pl-3 mt-1 space-y-1 transition-all duration-200 overflow-hidden ${
+                submenuTecnicaOpen ? "max-h-32 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <Link href="/tecnica/tsuki" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
+                Tsuki
+              </Link>
+              <Link href="/tecnica/gueri" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
+                Gueri
+              </Link>
+              <Link href="/tecnica/uke" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
+                Uke
+              </Link>
+            </div>
+          </div>
           <Link href="/graduacoes/" className={linkClass("/graduacoes")}>
             Graduações
           </Link>

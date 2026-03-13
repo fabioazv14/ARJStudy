@@ -7,15 +7,23 @@ export default function YinyangTable() {
       <div className="flex flex-col sm:flex-row gap-6">
         {/* Yin */}
         <div
-          className={`${bebasNeue.variable} ${fjallaOne.variable} bg-[var(--background)] border border-[var(--border)] rounded-2xl p-8 min-w-[260px]`}
+          className={`${bebasNeue.variable} ${fjallaOne.variable} relative overflow-hidden bg-[var(--black)] text-[var(--white)] border border-[var(--border)] rounded-2xl p-8 min-w-[260px] shadow-inner`}
         >
-          <h2 className="text-5xl font-bold mb-8 text-center font-title text-[var(--foreground)] tracking-wider">
+          {/* Dark accent bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--foreground)]" />
+          <h2 className="text-5xl font-bold mb-2 text-center font-title tracking-wider">
             Yin
           </h2>
-          <ul className="space-y-3 text-base font-navbut text-[var(--muted)]">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--black)] text-[var(--white)] text-[11px] tracking-[0.14em] uppercase font-semibold border border-[var(--white)]/70">
+              ● Preto
+            </span>
+            <span className="text-[10px] uppercase tracking-[0.16em] text-white/60">(Escuro)</span>
+          </div>
+          <ul className="space-y-3 text-base font-navbut text-white/75">
             {["Passivo", "Princípio Negativo", "Feminino", "Húmido", "Frio", "Oculto", "Nebuloso", "Brando", "Obscuro"].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)] flex-shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--white)] flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -24,12 +32,20 @@ export default function YinyangTable() {
 
         {/* Yang */}
         <div
-          className={`${bebasNeue.variable} ${fjallaOne.variable} bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-8 min-w-[260px]`}
+          className={`${bebasNeue.variable} ${fjallaOne.variable} relative overflow-hidden bg-[var(--white)] text-[var(--black)] border border-[var(--border)] rounded-2xl p-8 min-w-[260px] shadow-inner`}
         >
-          <h2 className="text-5xl font-bold mb-8 text-center font-title text-[var(--foreground)] tracking-wider">
+          {/* Light accent bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--border)]" />
+          <h2 className="text-5xl font-bold mb-2 text-center font-title tracking-wider">
             Yang
           </h2>
-          <ul className="space-y-3 text-base font-navbut text-[var(--muted)]">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[var(--black)] text-[11px] tracking-[0.14em] uppercase font-semibold border border-[var(--border)]">
+              ○ Branco
+            </span>
+            <span className="text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">(Claro)</span>
+          </div>
+          <ul className="space-y-3 text-base font-navbut text-[var(--black)]/70">
             {["Força Activa", "Masculino", "Calor", "Brilhante"].map((item) => (
               <li key={item} className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] flex-shrink-0" />
