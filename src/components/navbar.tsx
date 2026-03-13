@@ -6,16 +6,13 @@ import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const [submenuSimbolosOpen, setSubmenuSimbolosOpen] = useState(false);
-  const [submenuTecnicaOpen, setSubmenuTecnicaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const simbolosRef = useRef<HTMLDivElement>(null);
-  const tecnicaRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
 
   const toggleSimbolos = () => setSubmenuSimbolosOpen((prev) => !prev);
-  const toggleTecnica = () => setSubmenuTecnicaOpen((prev) => !prev);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -28,9 +25,6 @@ export default function Navbar() {
       if (simbolosRef.current && !simbolosRef.current.contains(event.target as Node)) {
         setSubmenuSimbolosOpen(false);
       }
-      if (tecnicaRef.current && !tecnicaRef.current.contains(event.target as Node)) {
-        setSubmenuTecnicaOpen(false);
-      }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -39,7 +33,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleRouteChange = () => {
       setSubmenuSimbolosOpen(false);
-      setSubmenuTecnicaOpen(false);
       setMobileOpen(false);
     };
     router.events.on("routeChangeStart", handleRouteChange);
@@ -127,33 +120,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Submenu: Técnica */}
-          <div className="relative" ref={tecnicaRef}>
-            <button onClick={toggleTecnica} className={linkClass("/tecnica", false)}>
-              Técnica
-              <svg className={`inline-block ml-1 w-3 h-3 transition-transform duration-200 ${submenuTecnicaOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 bg-[var(--surface)] border border-[var(--border)] rounded-xl shadow-2xl shadow-black/40 z-50 overflow-hidden origin-top transition-all duration-200 ease-out ${
-                submenuTecnicaOpen
-                  ? "scale-100 opacity-100 visible"
-                  : "scale-95 opacity-0 invisible pointer-events-none"
-              }`}
-            >
-              <Link href="/tecnica/tsuki" className="block px-5 py-3 text-sm text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors border-b border-[var(--border)]">
-                Tsuki
-              </Link>
-              <Link href="/tecnica/gueri" className="block px-5 py-3 text-sm text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors border-b border-[var(--border)]">
-                Gueri
-              </Link>
-              <Link href="/tecnica/uke" className="block px-5 py-3 text-sm text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                Uke
-              </Link>
-            </div>
-          </div>
+          <Link href="/tecnica" className={linkClass("/tecnica", false)}>
+            Técnica
+          </Link>
 
           <Link href="/graduacoes/" className={linkClass("/graduacoes")}>
             Graduações
@@ -218,34 +187,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile: Técnica dropdown */}
-          <div className="flex flex-col">
-            <button
-              onClick={toggleTecnica}
-              className={`${linkClass("/tecnica", false)} flex items-center justify-between w-full`}
-              aria-expanded={submenuTecnicaOpen}
-            >
-              <span>Técnica</span>
-              <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${submenuTecnicaOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div
-              className={`pl-3 mt-1 space-y-1 transition-all duration-200 overflow-hidden ${
-                submenuTecnicaOpen ? "max-h-32 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <Link href="/tecnica/tsuki" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                Tsuki
-              </Link>
-              <Link href="/tecnica/gueri" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                Gueri
-              </Link>
-              <Link href="/tecnica/uke" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                Uke
-              </Link>
-            </div>
-          </div>
+          <Link href="/tecnica" className={linkClass("/tecnica", false)}>
+            Técnica
+          </Link>
           <Link href="/graduacoes/" className={linkClass("/graduacoes")}>
             Graduações
           </Link>

@@ -1,36 +1,39 @@
 import React from "react";
+import Image from "next/image";
 import { bebasNeue } from "../../public/fonts/fonts";
 
 type TecnicaLineProps = {
   imageSrc: string;
   techniqueName: string;
   altText?: string;
+  detail?: string;
 };
 
-export default function TecnicaLine({ imageSrc, techniqueName, altText }: TecnicaLineProps) {
+export default function TecnicaLine({ imageSrc, techniqueName, altText, detail }: TecnicaLineProps) {
   return (
-    <div className="group flex items-center gap-8 bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 pr-8 mx-auto max-w-3xl w-full cursor-pointer transition-all duration-300 hover:border-[var(--accent)]/30 hover:shadow-lg hover:shadow-black/20 hover:-translate-y-0.5">
+    <div className="group flex items-center gap-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 shadow-[0_10px_40px_-28px_rgba(0,0,0,0.7)] transition hover:-translate-y-[2px] hover:border-[var(--accent)]/40 hover:shadow-[0_16px_60px_-26px_rgba(0,0,0,0.75)]">
       {/* Image */}
-      <div className="overflow-hidden rounded-lg w-28 h-36 flex-shrink-0 bg-[var(--surface-light)]">
-        <img
+      <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface-light)]">
+        <Image
           src={imageSrc}
-          alt={altText || techniqueName}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          alt={altText ?? techniqueName}
+          fill
+          sizes="80px"
+          className="object-contain p-2 transition duration-300 group-hover:scale-[1.04]"
         />
       </div>
 
       {/* Text */}
-      <div className={`${bebasNeue.variable} flex-1`}>
-        <h3 className="text-3xl font-semibold text-[var(--foreground)] font-title tracking-wide">
+      <div className={`${bebasNeue.variable} flex-1 space-y-1`}>
+        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+          Técnica
+        </div>
+        <h3 className="text-lg font-semibold text-[var(--foreground)] font-title leading-tight">
           {techniqueName}
         </h3>
-        <div className="mt-2 w-10 h-0.5 bg-gradient-to-r from-[var(--accent)] to-transparent rounded opacity-60 group-hover:w-16 group-hover:opacity-100 transition-all duration-300" />
+        {detail ? <p className="text-sm text-[var(--muted)] leading-snug">{detail}</p> : null}
       </div>
-
-      {/* Arrow */}
-      <svg className="w-5 h-5 text-[var(--muted)] group-hover:text-[var(--accent-light)] transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
     </div>
   );
 }
