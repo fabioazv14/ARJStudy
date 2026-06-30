@@ -17,6 +17,8 @@
   --muted: #737373;
   --shadow-color: rgba(0, 0, 0, 0.4);
   --logo-src: url("/images/arj/arjlogowhite.svg");
+  --font-fjalla-one: "Arial Narrow", Arial, Helvetica, sans-serif;
+  --font-bebas-neue: Impact, "Arial Narrow", Arial, Helvetica, sans-serif;
 }
 
 /* Light mode */
@@ -35,6 +37,8 @@
   --muted: #6b7280;
   --shadow-color: rgba(0, 0, 0, 0.08);
   --logo-src: url("/images/arj/arjlogoblack.svg");
+  --font-fjalla-one: "Arial Narrow", Arial, Helvetica, sans-serif;
+  --font-bebas-neue: Impact, "Arial Narrow", Arial, Helvetica, sans-serif;
 }
 
 @theme inline {
@@ -84,4 +88,3 @@ body {
 .page-enter {
   animation: fadeIn 0.4s ease-out;
 }
-

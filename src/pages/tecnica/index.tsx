@@ -28,7 +28,7 @@ const techniques: Technique[] = [
     type: "tsuki",
   },
   {
-    imageSrc: "/images/tecnica/tubitsuki.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Tubi-tsuki",
     detail: "Soco direto em chicote / rápido",
     type: "tsuki",
@@ -47,19 +47,19 @@ const techniques: Technique[] = [
     type: "gueri",
   },
   {
-    imageSrc: "/images/tecnica/ushirogeri.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Ushiro-gueri",
     detail: "Pontapé traseiro",
     type: "gueri",
   },
   {
-    imageSrc: "/images/tecnica/urageri.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Ura-gueri",
     detail: "Pontapé invertido / gancho",
     type: "gueri",
   },
   {
-    imageSrc: "/images/tecnica/kinger.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Kinger",
     detail: "Pontapé baixo / frontal rápido",
     type: "gueri",
@@ -84,31 +84,31 @@ const techniques: Technique[] = [
     type: "uke",
   },
   {
-    imageSrc: "/images/tecnica/sotouke.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Soto-uke",
     detail: "Defesa de fora para dentro",
     type: "uke",
   },
   {
-    imageSrc: "/images/tecnica/udeuke.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Ude-uke",
     detail: "Defesa com o antebraço",
     type: "uke",
   },
   {
-    imageSrc: "/images/tecnica/haishuuke.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Haishu-uke",
     detail: "Defesa com o dorso da mão",
     type: "uke",
   },
   {
-    imageSrc: "/images/tecnica/nagashiuke.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Nagashi-uke",
     detail: "Defesa fluida / desvio",
     type: "uke",
   },
   {
-    imageSrc: "/images/tecnica/kokenuke.png",
+    imageSrc: "/images/tecnica.png",
     techniqueName: "Koken-uke",
     detail: "Defesa com o punho curvado",
     type: "uke",
@@ -130,8 +130,7 @@ export default function Tecnica() {
         <TechniqueGrid
           techniques={techniques}
           enableTypeFilter
-          title="Técnicas"
-          subtitle="Filtre por tipo ou pesquise pelo nome/detalhe"
+          subtitle="Filtre por tipo ou pesquise pelo nome/detalhe."
         />
       </div>
     </div>

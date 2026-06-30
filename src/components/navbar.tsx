@@ -111,12 +111,6 @@ export default function Navbar() {
               <Link href="/simbolos/alexryujitsu" className="block px-5 py-3 text-sm text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors border-b border-[var(--border)]">
                 Alex Ryu Jitsu
               </Link>
-              <Link href="/simbolos/aamf" className="block px-5 py-3 text-sm text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors border-b border-[var(--border)]">
-                Associação de Artes Marciais de Famalicão
-              </Link>
-              <Link href="/simbolos/AHHHHH" className="block px-5 py-3 text-sm text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                AHHHHH
-              </Link>
             </div>
           </div>
 
@@ -177,12 +171,6 @@ export default function Navbar() {
             >
               <Link href="/simbolos/alexryujitsu" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
                 Alex Ryu Jitsu
-              </Link>
-              <Link href="/simbolos/aamf" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                Associação de Artes Marciais de Famalicão
-              </Link>
-              <Link href="/simbolos/AHHHHH" className="block px-4 py-2 text-sm text-[var(--foreground)] rounded-md hover:bg-[var(--accent)]/10 hover:text-[var(--accent-light)] transition-colors">
-                AHHHHH
               </Link>
             </div>
           </div>

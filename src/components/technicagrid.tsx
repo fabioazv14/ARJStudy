@@ -40,6 +40,13 @@ export default function TechniqueGrid({ techniques, title, subtitle, enableTypeF
 
   return (
     <section className="flex flex-col gap-6">
+      {(title || subtitle) && (
+        <div className={`${bebasNeue.variable}`}>
+          {title ? <h2 className="font-title text-3xl text-[var(--foreground)] tracking-wide">{title}</h2> : null}
+          {subtitle ? <p className="text-sm text-[var(--muted)] mt-1">{subtitle}</p> : null}
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-3 items-center">
         <div className="flex items-center gap-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl px-4 py-3 shadow-sm w-full sm:w-auto flex-1">
           <svg
@@ -103,7 +110,7 @@ export default function TechniqueGrid({ techniques, title, subtitle, enableTypeF
               />
               <div className="absolute inset-x-4 top-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[var(--muted)] drop-shadow-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                Técnica
+                {t.type ?? "Técnica"}
               </div>
             </div>
             <div className="p-4 space-y-2">

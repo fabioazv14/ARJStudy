@@ -38,7 +38,7 @@ export default function Home() {
             imageSrc="/images/tecnica.png"
             imageAlt="TECNICA"
             title="Técnica"
-            linkHref="/tecnica/tsuki/"
+            linkHref="/tecnica"
             linkText="Ver técnica"
           />
           <Card
